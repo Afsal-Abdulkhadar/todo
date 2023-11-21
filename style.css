@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.todo{
+    width: 500px;
+    margin-top: 150px;
+    margin-left: 500px;
+    padding: 10px;
+    background-color: rgb(49, 37, 37);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 15px;
+}
+
+.cls1{
+    margin-top: 10px;
+    padding: 20px;
+}
+
+h1{
+    font-weight: bolder;
+    color: white;
+}
+
+.cls2{
+    width: 380px;
+    height: 30px;
+    margin: 25px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#btn1{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: blue;
+    border: solid blue;
+}

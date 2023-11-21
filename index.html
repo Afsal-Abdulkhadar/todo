@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   
+        <div class="todo">
+            <center>
+            <div class="cls1">
+                <h1>To-Do List</h1>
+                <input class="cls2" id="getValue" type="text" placeholder="Enter a task"><br><br>
+                <button id="btn1" onclick="addTask()">Add Task</button><br>
+            </div>
+            </center>
+            <div id="cls3"></div>
+        </div>
+    
+
+    <script>
+        function addTask(){
+            const task = document.getElementById("getValue").value
+            console.log(task);
+            const parentDiv = document.getElementById('cls3');
+
+            const newDiv = document.createElement(`div`);
+            const newBtn = document.createElement(`button`);
+            const Update = document.createElement(`button`);
+
+            newDiv.textContent = task;
+            newBtn.innerHTML = "Delete";
+            Update.innerHTML = "Update";
+
+            newBtn.style.width="80px"
+            newBtn.style.height="30px"
+            newBtn.style.marginLeft="250px"            
+            newBtn.style.backgroundColor="red"          
+            newBtn.style.color="white"          
+            newBtn.style.fontSize="15px"       
+            newBtn.style.borderRadius="15px"       
+            Update.style.marginLeft="10px"
+            Update.style.width="80px"
+            Update.style.height="30px"
+            Update.style.color="white"            
+            Update.style.backgroundColor="green"
+            Update.style.fontSize="15px"       
+            Update.style.borderRadius="15px"
+            newDiv.style.backgroundColor="white"            
+            newDiv.style.marginTop="10px"            
+            newDiv.style.borderRadius="15px"            
+            newDiv.style.padding="10px"            
+                       
+
+            if(task==''){
+                alert("Please enter a task")
+            }
+            else{
+                parentDiv.appendChild(newDiv);
+                newDiv.appendChild(newBtn);
+                newDiv.appendChild(Update);
+            }
+
+            newBtn.onclick=function(){
+                newDiv.parentNode.removeChild(newDiv);
+            };
+
+            Update.onclick=function(){
+                const promt = prompt("Enter the update")
+                
+                if(promt==``){
+                    parentDiv.appendChild(newDiv);
+                    newDiv.appendChild(newBtn);
+                    newDiv.appendChild(Update);
+                }else{
+                    newDiv.textContent=promt
+                    newDiv.appendChild(newBtn);
+                    newDiv.appendChild(Update);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
